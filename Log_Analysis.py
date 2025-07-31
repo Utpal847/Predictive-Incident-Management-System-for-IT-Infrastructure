@@ -94,6 +94,7 @@ X_test_final = np.hstack((X_test_bert_scaled, X_test_numeric))
 X_train_bal = X_train_final
 y_train_bal = y_train
 
+#Random Forest
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix
@@ -118,6 +119,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+#XGBoost
 
 xgb = XGBClassifier(
     n_estimators=100,       # reduce from 200
@@ -144,7 +146,7 @@ print("\n📊 XGBoost Classification Report:")
 print(classification_report(y_test, y_pred_xgb, target_names=label_encoder.classes_))
 
 
-
+#LSTM
 
 import torch
 import torch.nn as nn
